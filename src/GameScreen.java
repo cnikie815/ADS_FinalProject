@@ -1,3 +1,4 @@
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -9,10 +10,11 @@ public class GameScreen {
 	public static void play(String s){
 		JFrame f = new JFrame();
 		JPanel p = new JPanel();
+		JButton playCard = new JButton("Play Card");
 		f.setSize(800, 800);
 		p.setVisible(true);
 		f.setVisible(true);
 		f.add(p);
-		
+		p.add(playCard);
 	}
 }
