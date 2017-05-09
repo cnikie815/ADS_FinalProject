@@ -1,12 +1,26 @@
+import java.io.Serializable;
 
-public class Card implements Comparable{
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
+public abstract class Card implements Serializable{
 	private Suit s;
 	private boolean up;
 	private int n;
-	public Card (Suit suit, int num){
-		s = suit;
-		num = num;
-		up = false;
+	private JLabel c;
+	private static final long serialVersionUID = -3158433674904661857L;
+	protected CardName name;
+	public Card(CardName name) {
+		this.name = name;
+	}
+	public CardName getName() {
+		return name;
+	}
+	public boolean equals(Card c) {
+		return c.name==name;
+	}
+	public String toString() {
+		return name.toString();
 	}
 	public boolean equals(Object c){
 		if(this==c){
@@ -25,41 +39,13 @@ public class Card implements Comparable{
 		Card c2 = (Card)c;
 		return n - c2.n;
 	}
-	public int getSuit(){
-		return s;
-	}
 	public int getN(){
 		return n;
-	}
-	public boolean isHeartOrDiamond(){
-		return s == Suit.diamond || Suit.heart;
 	}
 	public boolean isUp(){
 		return up;
 	}
 	public void turn(){
 		up = !up;
-	}
-	public String toString(){
-		return numToString() + " of " + s;
-	}
-	private String numToString(){
-		if(n == 11){
-			return "Jack";
-		} else if( n == 12){
-			return "Queen";
-		} else if(n == 13){
-			return "King";
-		} else if (n == 1){
-			return "Ace";
-		} else {
-			return "" + n;
-		}
-		
-	}
-	@Override
-	public int compareTo(Object o) {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 }

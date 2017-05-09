@@ -4,20 +4,12 @@ import java.util.Random;
 public class Deck {
 	public static final int totalSize = 0;
 	private ArrayList<Card> cards;
+	CardName n;
 	public Deck(){
 		reset();
 	}
 	private void reset(){
 		cards = new ArrayList<Card>();
-		addSuit(Suit.spade);
-		addSuit(Suit.heart);
-		addSuit(Suit.diamond);
-		addSuit(Suit.club);
-	}
-	private void addSuit(Suit s){
-		for (int a = 0; a < 14; a++){
-			cards.add(new Card(s, a));
-		}
 	}
 	public boolean empty(){
 		return cards.isEmpty();
