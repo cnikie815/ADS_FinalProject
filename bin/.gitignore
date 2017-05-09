@@ -1,6 +1,3 @@
 /Deck.class
 /Card.class
-/numCard.class
-/PlayingCard.class
-/DeckOfCards.class
-/HalfDeck.class
+/Suit.class
