@@ -3,7 +3,7 @@ import java.io.Serializable;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 
-public abstract class Card implements Serializable{
+public class Card implements Serializable{
 	private Suit s;
 	private boolean up;
 	private int n;
