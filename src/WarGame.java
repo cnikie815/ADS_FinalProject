@@ -37,7 +37,6 @@ public class WarGame {
 		f.add(p);
 		f.pack();
 		f.setVisible(true);
-		int half;
 		Deck d = new Deck();
 		final Deck d1 = new Deck();
 		final Deck d2 = new Deck();
