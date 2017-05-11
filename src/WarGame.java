@@ -11,8 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 public class WarGame {
-	private static final CardName JackSpade = null;
-
 	public static void main(String args[]){
 		JFrame f = new JFrame();
 		ImageGrab.loadCards();
@@ -21,35 +19,28 @@ public class WarGame {
 		BoxLayout b = new BoxLayout(p, BoxLayout.PAGE_AXIS);
 		JButton go = new JButton("press");
 		go.setAlignmentX(Component.CENTER_ALIGNMENT);
-		CardLabel playerDiscard = new CardLabel();
-		playerDiscard.setAlignmentX(Component.CENTER_ALIGNMENT);
 		CardLabel playerDeck = new CardLabel();
+		playerDeck.setBounds(0, 0, 50, 100);
 		playerDeck.setAlignmentX(Component.CENTER_ALIGNMENT);
-		//playerDeck.setCardToBack();
 		final CardLabel playerRun = new CardLabel();
 		playerRun.setAlignmentX(Component.CENTER_ALIGNMENT);
-		CardLabel compRun = new CardLabel();
+		final CardLabel compRun = new CardLabel();
 		compRun.setAlignmentX(Component.CENTER_ALIGNMENT);
-		CardLabel compDiscard = new CardLabel();
-		compDiscard.setAlignmentX(Component.CENTER_ALIGNMENT);
 		CardLabel compDeck = new CardLabel();
 		compDeck.setAlignmentX(Component.CENTER_ALIGNMENT);
-		//compDeck.setCardToBack();
 		p.setLayout(b);
 		p.add(go);
-		p.add(playerDiscard);
 		p.add(playerDeck);
 		p.add(playerRun);
 		p.add(compRun);
-		p.add(compDiscard);
 		p.add(compDeck);
 		f.add(p);
 		f.pack();
 		f.setVisible(true);
 		int half;
 		Deck d = new Deck();
-		Deck d1 = new Deck();
-		Deck d2 = new Deck();
+		final Deck d1 = new Deck();
+		final Deck d2 = new Deck();
 		for (int a = 2; a < 15; a++){
 			if (a == 11){
 				d.add(new Card(CardName.JackSpade));
@@ -117,8 +108,9 @@ public class WarGame {
 				d.add(new Card(CardName.TenClub));
 				d.add(new Card(CardName.TenDiamond));
 			}
+			}
 		d.shuffle();
-		for(int i = 0; i < 53; i++){
+		for(int i = 0; i < 52; i++){
 			if (i%2 == 0){
 				d1.add(d.getTop());
 			} else {
@@ -127,10 +119,10 @@ public class WarGame {
 		}
 		go.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				playerRun.setCardName(d1.getTop());
+				playerRun.setCardName(d1.getTop().getCardName());
+				compRun.setCardName(d2.getTop().getCardName());
 			}
 			
 		});
 	}
-}
 }

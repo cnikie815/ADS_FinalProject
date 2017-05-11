@@ -48,4 +48,7 @@ public class Card implements Serializable{
 	public void turn(){
 		up = !up;
 	}
+	public CardName getCardName(){
+		return name;
+	}
 }

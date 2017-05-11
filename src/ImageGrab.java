@@ -12,10 +12,14 @@ public class ImageGrab {
 	private static Image cardBack;
 	public static void loadCards() {
 		for (CardName c : CardName.values()){
-			System.out.println(c.toString());
-				cards.put(c, new ImageIcon(ImageGrab.class.getResource("/DeckCards/"+c.toString()+".png")).getImage());
+			cards.put(
+						c,
+						new ImageIcon(
+								ImageGrab.class.getResource(
+										"DeckCards/"+c.toString()+".png")
+								).getImage());
 		}
-		cardBack = new ImageIcon(ImageGrab.class.getResource("/DeckCards/CardBack.png")).getImage();
+		cardBack = new ImageIcon(ImageGrab.class.getResource("DeckCards/CardBack.png")).getImage();
 	}
 	public static Image getCardGraphic(CardName c) {
 		if (cards==null) return null;

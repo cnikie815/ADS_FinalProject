@@ -60,11 +60,11 @@ public enum CardName {
 		case AceDiamond: return "Ace of Diamonds";
 		case EightClub: return "8 of Clubs";
 		case EightDiamond: return "8 of Diamonds";
-		case EightHeart: return "8 or Hearts";
+		case EightHeart: return "8 of Hearts";
 		case EightSpade: return "8 of Spades";
 		case FiveClub: return "5 of Clubs";
 		case FiveDiamond: return "5 of Diamonds";
-		case FiveHeart: return "5 or Hearts";
+		case FiveHeart: return "5 of Hearts";
 		case FiveSpade: return "5 of Spades";
 		case FourClub: return "4 of Clubs";
 		case FourDiamond: return "4 of Diamonds";
@@ -106,7 +106,7 @@ public enum CardName {
 		case TwoDiamond:return "2 of Diamonds";
 		case TwoHeart:return "2 of Hearts";
 		case TwoSpade:return "2 of Spades";
-		case CardBack:return "Card Back";
+		case CardBack:return "CardBack";
 		default:return null;
 		}
 	}

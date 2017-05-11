@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Deck {
-	public static final int totalSize = 0;
+	public static final int totalSize =52;
 	private ArrayList<Card> cards;
-	CardName n;
+	Card n;
 	public Deck(){
 		reset();
 	}
